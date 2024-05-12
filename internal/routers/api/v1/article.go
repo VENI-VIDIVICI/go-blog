@@ -1,6 +1,10 @@
 package v1
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/VENI-VIDIVICI/go-blog/pkg/app"
+	"github.com/VENI-VIDIVICI/go-blog/pkg/errcode"
+	"github.com/gin-gonic/gin"
+)
 
 type Article struct {
 }
@@ -12,7 +16,6 @@ func NewArticle() Article {
 //新增文章
 
 func (a Article) CreateArticle(c *gin.Context) {
-
 }
 
 //删除指定文章
@@ -36,5 +39,5 @@ func (a Article) GetArticleById(c *gin.Context) {
 //获取文章列表
 
 func (a Article) GetArticleList(c *gin.Context) {
-
+	app.NewResponse(c).ToErrorResponse(errcode.ServerError)
 }

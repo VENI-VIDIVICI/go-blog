@@ -1,0 +1,128 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/api/v1/tags": {
+            "post": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "新增标签",
+                "parameters": [
+                    {
+                        "maxLength": 100,
+                        "minLength": 3,
+                        "description": "标签名称",
+                        "name": "name",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "enum": [
+                            0,
+                            1
+                        ],
+                        "default": 1,
+                        "description": "状态",
+                        "name": "state",
+                        "in": "body",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "maxLength": 100,
+                        "minLength": 3,
+                        "description": "创建者",
+                        "name": "created_by",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "成功",
+                        "schema": {
+                            "$ref": "#/definitions/model.SwaggerTag"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "app.Pager": {
+            "type": "object",
+            "properties": {
+                "page": {
+                    "type": "integer"
+                },
+                "page_size": {
+                    "type": "integer"
+                },
+                "total_rows": {
+                    "type": "integer"
+                }
+            }
+        },
+        "model.SwaggerTag": {
+            "type": "object",
+            "properties": {
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model.Tag"
+                    }
+                },
+                "pager": {
+                    "$ref": "#/definitions/app.Pager"
+                }
+            }
+        },
+        "model.Tag": {
+            "type": "object",
+            "properties": {
+                "created_by": {
+                    "description": "创建人",
+                    "type": "string"
+                },
+                "created_on": {
+                    "description": "创建时间",
+                    "type": "integer"
+                },
+                "deleted_on": {
+                    "description": "删除时间",
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "is_del": {
+                    "type": "integer"
+                },
+                "modified_by": {
+                    "description": "修改人",
+                    "type": "string"
+                },
+                "modified_on": {
+                    "description": "修改时间",
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

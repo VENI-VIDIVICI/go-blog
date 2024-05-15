@@ -1,3 +1,5 @@
-2024/05/12 21:18:27 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1715519907621349700}
-2024/05/12 21:33:29 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1715520809796253500}
-2024/05/12 21:37:37 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1715521057084182100}
+2024/05/16 00:02:56 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1715788976742168200}
+2024/05/16 00:04:24 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1715789064259306700}
+2024/05/16 00:05:42 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1715789142475365100}
+2024/05/16 00:07:14 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1715789234032657300}
+2024/05/16 00:07:25 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1715789245319540600}

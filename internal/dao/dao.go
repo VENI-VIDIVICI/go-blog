@@ -56,3 +56,20 @@ func (d *Dao) GetAuth(appKey, appSecret string) (model.Auth, error) {
 	auth := model.Auth{AppKey: appKey, AppSecret: appSecret}
 	return auth.Get(d.engine)
 }
+
+func (d *Dao) CreateArticle(title, desc, content, createdBy string) error {
+	article := model.Article{
+		Title:   title,
+		Desc:    desc,
+		Content: content,
+		Model:   &model.Model{CreatedBy: createdBy},
+	}
+	return article.Create(d.engine)
+}
+
+func (d *Dao) DeleteArticle(id uint32, modifiedBy string) error {
+	article := model.Article{
+		Model: &model.Model{ID: id, IsDel: 1, ModifiedBy: modifiedBy},
+	}
+	return article.Delete(d.engine)
+}

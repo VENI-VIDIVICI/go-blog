@@ -1,5 +1,21 @@
-2024/05/16 00:02:56 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1715788976742168200}
-2024/05/16 00:04:24 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1715789064259306700}
-2024/05/16 00:05:42 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1715789142475365100}
-2024/05/16 00:07:14 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1715789234032657300}
-2024/05/16 00:07:25 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1715789245319540600}
+2024/05/20 00:29:17 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"[]","time":1716136157197299700}
+2024/05/20 00:30:09 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1716136209102078100}
+2024/05/20 00:30:50 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1716136250155925800}
+2024/05/20 00:31:02 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"[]","time":1716136262820974800}
+2024/05/20 00:31:12 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1716136272687900800}
+2024/05/20 00:31:15 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"[]","time":1716136275793032300}
+2024/05/20 00:32:10 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1716136330222794200}
+2024/05/20 00:32:34 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"[]","time":1716136354983992600}
+2024/05/20 00:34:06 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1716136446268765000}
+2024/05/20 00:34:09 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"[]","time":1716136449663641500}
+2024/05/20 00:35:32 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1716136532630479400}
+2024/05/20 00:35:35 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"[]","time":1716136535127361100}
+2024/05/20 00:35:58 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1716136558163377800}
+2024/05/20 00:36:20 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"[]","time":1716136580659940100}
+2024/05/20 00:37:10 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1716136630125008700}
+2024/05/20 00:37:12 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"[]","time":1716136632527277200}
+2024/05/20 00:38:55 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1716136735778401100}
+2024/05/20 00:38:58 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"[]","time":1716136738760373300}
+2024/05/20 00:40:00 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1716136800273135700}
+2024/05/20 00:40:08 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"eddycjy: go-programming-tour-book/blog-service","time":1716136808105624900}
+2024/05/20 00:40:16 {"callers":["D:/work/go-blog/main.go: 25 main.init.0"],"level":"info","message":"[]","time":1716136816316485300}

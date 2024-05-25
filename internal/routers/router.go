@@ -3,6 +3,7 @@ package routers
 import (
 	_ "github.com/VENI-VIDIVICI/go-blog/docs"
 	"github.com/VENI-VIDIVICI/go-blog/internal/middleware"
+	"github.com/VENI-VIDIVICI/go-blog/internal/routers/api"
 	v1 "github.com/VENI-VIDIVICI/go-blog/internal/routers/api/v1"
 	"github.com/gin-gonic/gin"
 	ginSwagger "github.com/swaggo/gin-swagger"
@@ -17,12 +18,14 @@ func NewRouter() *gin.Engine {
 	tag := v1.NewTag()
 	article := v1.NewArticle()
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	r.POST("/auth", api.GetAuth)
 	api := r.Group("/api/v1")
 	{
 		// tag
 		api.POST("/tag", tag.CreateTag)
 		api.DELETE("/tags/:id", tag.DeleteTagById)
 		api.PUT("/tags/:id", tag.UpdateTagById)
+		api.GET("/tag/count", tag.CountTag)
 		api.GET("/tags", tag.GetAll)
 
 		//	article

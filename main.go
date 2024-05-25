@@ -26,6 +26,7 @@ func init() {
 	if err != nil {
 		log.Fatalf("init.setupLogger err: %v", err)
 	}
+
 }
 
 //@title 博客系统
@@ -64,8 +65,13 @@ func SetSetting() error {
 	if err != nil {
 		return err
 	}
+	err = settingInstance.ReadSection("JWT", &global.JWTSetting)
+	if err != nil {
+		return err
+	}
 	global.ServerSetting.ReadTimeOut *= time.Second
 	global.ServerSetting.WriteTimeOut *= time.Second
+	global.JWTSetting.Expire *= time.Second
 	return nil
 }
 

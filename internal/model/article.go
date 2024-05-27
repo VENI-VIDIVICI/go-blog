@@ -29,3 +29,14 @@ func (a Article) Create(db *gorm.DB) error {
 func (a Article) Delete(db *gorm.DB) error {
 	return db.Where("id = ? AND is_del = ?", a.Model.ID, 0).Delete(&a).Error
 }
+
+func (a Article) Get(db *gorm.DB) (Article, error) {
+	var article Article
+	err := db.Where("id = ? AND is_del = ?", a.Model.ID, 0).First(&article).Error
+	return article, err
+}
+
+func (a Article) Update(db *gorm.DB) error {
+	// var article Article
+	return db.Model(&Article{}).Where("id = ? AND is_del = ?", a.Model.ID, 0).Update(&a).Error
+}

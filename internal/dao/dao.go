@@ -73,3 +73,20 @@ func (d *Dao) DeleteArticle(id uint32, modifiedBy string) error {
 	}
 	return article.Delete(d.engine)
 }
+
+func (d *Dao) GetArticleById(id uint32) (model.Article, error) {
+	article := model.Article{
+		Model: &model.Model{ID: id},
+	}
+	return article.Get(d.engine)
+}
+
+func (d *Dao) UpdateArticleById(id uint32, title, desc, content string) error {
+	article := model.Article{
+		Title:   title,
+		Desc:    desc,
+		Content: content,
+		Model:   &model.Model{ID: id},
+	}
+	return article.Update(d.engine)
+}

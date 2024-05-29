@@ -7,8 +7,9 @@ import (
 
 type Tag struct {
 	*Model
-	Name  string `json:"name"`
-	State uint8  `json:"state"`
+	Name    string    `json:"name"`
+	State   uint8     `json:"state"`
+	Article []Article `gorm:"many2many:blog_article_tag" json:"article"`
 }
 
 //swag init -g internal/routers/api/v1/tag.go

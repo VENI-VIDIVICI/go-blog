@@ -57,12 +57,19 @@ func (d *Dao) GetAuth(appKey, appSecret string) (model.Auth, error) {
 	return auth.Get(d.engine)
 }
 
-func (d *Dao) CreateArticle(title, desc, content, createdBy string) error {
+func (d *Dao) CreateArticle(title, desc, content, createdBy string, tagNames []uint32) error {
 	article := model.Article{
 		Title:   title,
 		Desc:    desc,
 		Content: content,
 		Model:   &model.Model{CreatedBy: createdBy},
+	}
+	if len(tagNames) != 0 {
+		var tags []model.Tag
+		for _, val := range tagNames {
+			tags = append(tags, model.Tag{Model: &model.Model{ID: val}})
+		}
+		article.Tag = tags
 	}
 	return article.Create(d.engine)
 }
@@ -89,4 +96,12 @@ func (d *Dao) UpdateArticleById(id uint32, title, desc, content string) error {
 		Model:   &model.Model{ID: id},
 	}
 	return article.Update(d.engine)
+}
+
+func (d *Dao) GetList(title string, page, pageSize int) ([]model.Article, error) {
+	article := model.Article{
+		Title: title,
+	}
+	pageOffset := app.GetPageOffset(page, pageSize)
+	return article.List(d.engine, pageOffset, pageSize)
 }

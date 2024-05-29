@@ -99,5 +99,22 @@ func (a Article) GetArticleById(c *gin.Context) {
 //获取文章列表
 
 func (a Article) GetArticleList(c *gin.Context) {
-	app.NewResponse(c).ToErrorResponse(errcode.ServerError)
+	params := service.GetArticleListRequest{}
+	response := app.NewResponse(c)
+	vaild, errs := app.BindAndValid(c, &params)
+	if vaild == false {
+		response.ToErrorResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
+		return
+	}
+	svc := service.New(c.Request.Context())
+	pageConfig := app.Pager{Page: 1, PageSize: 10}
+	list, err := svc.GetArticleList(&params, &pageConfig)
+	if err != nil {
+		response.ToErrorResponse(errcode.ErrorCreateTagFail)
+		return
+	}
+	response.ToResponse(gin.H{
+		"datas": list,
+	})
+	return
 }

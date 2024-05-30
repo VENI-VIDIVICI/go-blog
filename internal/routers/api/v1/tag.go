@@ -2,6 +2,7 @@ package v1
 
 import (
 	"fmt"
+
 	"github.com/VENI-VIDIVICI/go-blog/global"
 	"github.com/VENI-VIDIVICI/go-blog/internal/service"
 	"github.com/VENI-VIDIVICI/go-blog/pkg/app"
@@ -121,6 +122,7 @@ func (t Tag) GetAll(c *gin.Context) {
 	}
 	svc := service.New(c.Request.Context())
 	pageConfig := app.Pager{Page: 1, PageSize: 10}
+
 	list, err := svc.GetTagList(&param, &pageConfig)
 	if err != nil {
 		response.ToErrorResponse(errcode.ErrorGetTagListFail)

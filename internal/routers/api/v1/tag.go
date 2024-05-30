@@ -115,10 +115,10 @@ func (t Tag) GetAll(c *gin.Context) {
 	param := service.TagListRequest{}
 	response := app.NewResponse(c)
 	valid, errs := app.BindAndValid(c, &param)
-	if valid == false {
-
+	if valid == false 
 		global.Logger.Infof("app.BindAndValid errs: %v", errs)
 		response.ToErrorResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
+		
 		return
 	}
 

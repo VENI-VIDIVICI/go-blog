@@ -120,6 +120,7 @@ func (t Tag) GetAll(c *gin.Context) {
 		response.ToErrorResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
 		return
 	}
+
 	svc := service.New(c.Request.Context())
 	pageConfig := app.Pager{Page: 1, PageSize: 10}
 

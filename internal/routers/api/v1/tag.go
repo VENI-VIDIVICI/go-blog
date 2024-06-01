@@ -115,18 +115,13 @@ func (t Tag) GetAll(c *gin.Context) {
 	param := service.TagListRequest{}
 	response := app.NewResponse(c)
 	valid, errs := app.BindAndValid(c, &param)
-	
-	if valid == false 
-
+	if valid == false {
 		global.Logger.Infof("app.BindAndValid errs: %v", errs)
 		response.ToErrorResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
-		
 		return
 	}
-
 	svc := service.New(c.Request.Context())
 	pageConfig := app.Pager{Page: 1, PageSize: 10}
-
 	list, err := svc.GetTagList(&param, &pageConfig)
 	if err != nil {
 		response.ToErrorResponse(errcode.ErrorGetTagListFail)

@@ -32,7 +32,9 @@ func (a Article) Create(db *gorm.DB) error {
 }
 
 func (a Article) Delete(db *gorm.DB) error {
-	return db.Where("id = ? AND is_del = ?", a.Model.ID, 0).Delete(&a).Error
+	// return db.Where("id = ? AND is_del = ?", a.Model.ID, 0).Delete(&a).Error
+	res := db.Model(&Article{}).Preload("Tag").Where("id = ? AND is_del = ?", a.Model.ID, 0).Delete(&a)
+	return res.Error
 }
 
 func (a Article) Get(db *gorm.DB) (Article, error) {
